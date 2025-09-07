@@ -1,4 +1,4 @@
-#name: Deploy Vite site to Pages
+name: Deploy Vite site to Pages
 
 on:
   push:
@@ -22,8 +22,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-      - run: npm install
+          cache: 'npm'     # ok if no lockfile; it will just skip caching
+      - run: npm install   # <-- not npm ci
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -37,3 +37,4 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
