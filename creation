@@ -1,0 +1,10 @@
+
+npm create vite@latest coolblocks -- --template react
+cd coolblocks
+
+
+npm i
+npm i react-leaflet leaflet @turf/turf
+
+npm i -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
